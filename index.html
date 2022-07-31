@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>2D Photo Slider</title>
+    <meta charset="utf-8" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #slider {
+            border: 1px solid black;
+            width: 600px;
+            height: 300px;
+            margin: 50px;
+            position:relative;
+            overflow:hidden;
+        }
+        #slider li{
+            position:absolute;
+            animation:slider 20s infinite;
+            z-index:1;
+        }
+        #slider li:nth-child(1){
+            left:0;            
+        }
+        #slider li:nth-child(2){
+            left:600px;
+            animation-delay:-15s;
+        }
+        #slider li:nth-child(3){
+            left:600px;
+            animation-delay:-10s;
+        }
+        #slider li:nth-child(4){
+            left:600px;
+            animation-delay:-5s;
+        }
+        @keyframes slider{
+            0%,20%{
+                left:0;
+            }
+            25%{
+                left:-600px;
+                z-index:1;
+            }
+            26%{
+                z-index:0;
+            }
+            28%{
+                left:600px;
+            }
+            95%{
+                left:600px;
+            }
+            100%{
+                left:0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 2D Photo Slider -->
+    <ul id="slider">
+        <li><img src="images/slide1.jpg" /></li>
+        <li><img src="images/slide2.jpg" /></li>
+        <li><img src="images/slide3.jpg" /></li>
+        <li><img src="images/slide4.jpg" /></li>
+    </ul>
+</body>
+</html>
